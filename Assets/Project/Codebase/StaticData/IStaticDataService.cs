@@ -1,16 +1,12 @@
-﻿using Assets.Project.CodeBase.Infostructure.Services;
-using Assets.Project.CodeBase.StaticData.Field;
-using Assets.Project.CodeBase.StaticData.Input;
-using System.Collections.Generic;
+﻿using Assets.Project.CodeBase.StaticData.Field;
+using Cysharp.Threading.Tasks;
+using UnityEngine.AddressableAssets;
 
 namespace Assets.Project.CodeBase.StaticData
 {
     public interface IStaticDataService
     {
-        FieldConfigData ForFieldConfig();
-        InputConfigData ForInputConfig();
-
-
-        void Load();
+        UniTask<T> LoadAsset<T>(AssetReference reference) where T : class;
+        UniTask LoadBaseAssets();
     }
 }

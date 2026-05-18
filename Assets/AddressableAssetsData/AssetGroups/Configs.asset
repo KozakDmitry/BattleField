@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Configs
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Configs
+  m_GUID: 705e1f2a688f26541aced6d0f3a97427
+  m_SerializeEntries:
+  - m_GUID: c96e2010eb844f24e9efeea426bad636
+    m_Address: Assets/Project/StaticData/Gameplay/Configs/FieldConfigData.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: b81d2224d86b8644e97505165ba9b0bc, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: a63127b2738dcd24c89ec4782fdcf133, type: 2}
+    - {fileID: 11400000, guid: c8f6bfa184d5fba4cb6d0f6c7940360a, type: 2}
