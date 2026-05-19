@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Project.Codebase.Logic.Gameplay.Field
 {
-    public class Field :IField
+    public class Field : MonoBehaviour, IField
     {
-        public GameObject _field;
+        public GameObject FieldObject { get; private set; }
+
+        public void Spawn(GameObject prefab)
+        {
+            FieldObject = Object.Instantiate(prefab);
+        }
     }
 }

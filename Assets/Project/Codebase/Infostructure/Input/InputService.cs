@@ -1,6 +1,5 @@
 ﻿
 
-using Assets.Project.CodeBase.StaticData;
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -17,10 +16,8 @@ namespace Assets.Project.CodeBase.Infostructure.Input
         public event EndT OnEndEvent;
 
         private TouchControls _touchControls;
-        private IStaticDataService _staticDataService;
-        public InputService(IStaticDataService staticData)
+        public InputService()
         {
-            _staticDataService = staticData;
             _touchControls = new TouchControls();
             _touchControls.Enable();
             RegisterEvents();

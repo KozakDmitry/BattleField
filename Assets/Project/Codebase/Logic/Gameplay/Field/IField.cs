@@ -1,6 +1,10 @@
-﻿namespace Assets.Project.Codebase.Logic.Gameplay.Field
+﻿using UnityEngine;
+
+namespace Assets.Project.Codebase.Logic.Gameplay.Field
 {
-    internal interface IField
+    public interface IField
     {
+        void Spawn(GameObject prefab);
+        GameObject FieldObject { get; }
     }
 }

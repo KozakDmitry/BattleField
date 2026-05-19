@@ -14,12 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
   m_GroupName: Configs
   m_GUID: 705e1f2a688f26541aced6d0f3a97427
-  m_SerializeEntries:
-  - m_GUID: c96e2010eb844f24e9efeea426bad636
-    m_Address: Assets/Project/StaticData/Gameplay/Configs/FieldConfigData.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: b81d2224d86b8644e97505165ba9b0bc, type: 2}
   m_SchemaSet:

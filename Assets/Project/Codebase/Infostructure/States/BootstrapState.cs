@@ -4,7 +4,6 @@ using Assets.Project.CodeBase.Infostructure.Services;
 using Assets.Project.CodeBase.Infostructure.Services.ProgressService;
 using Assets.Project.CodeBase.Infostructure.Services.SaveService;
 using Assets.Project.CodeBase.Infostructure.Services.SceneService;
-using Assets.Project.CodeBase.StaticData;
 using Cysharp.Threading.Tasks;
 using System;
 
@@ -31,10 +30,8 @@ namespace Assets.Project.CodeBase.Infostructure.States
         private async UniTask RegisterServices()
         {
             ProgressService progressService = new ProgressService();
-            StaticDataService staticDataService = new StaticDataService();
-            await staticDataService.LoadBaseAssets();
 
-            DI.Register<IInputService>(new InputService(staticDataService));
+            DI.Register<IInputService>(new InputService());
             DI.Register<ISaveService>(new SaveService(progressService));
             DI.Register<ISceneService>(new SceneService(_stateMachine,
                                                         DI.ResolveSync<IInputService>()));
