@@ -89,214 +89,94 @@ public partial class @TouchControls: IInputActionCollection2, IDisposable
     ""name"": ""TouchControls"",
     ""maps"": [
         {
-            ""name"": ""Player"",
-            ""id"": ""5e4defd3-5522-439b-b0b6-bbdb569e050e"",
+            ""name"": ""PC"",
+            ""id"": ""655bb6e3-dc76-4994-8add-691c35da2a5d"",
             ""actions"": [
                 {
-                    ""name"": ""TouchDelta"",
-                    ""type"": ""Value"",
-                    ""id"": ""9f496a29-8671-4306-9819-ca0b25f42f6f"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""TouchPosition"",
-                    ""type"": ""Value"",
-                    ""id"": ""6bec77a7-0cc4-41e0-9ead-0022a2fb25aa"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Press"",
+                    ""name"": ""Fire"",
                     ""type"": ""Button"",
-                    ""id"": ""40beb48c-ddcc-40aa-adc0-aeed2426583c"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""UnPress"",
-                    ""type"": ""Button"",
-                    ""id"": ""8bffe9c0-5188-49ab-a8b1-700102f79f32"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""MutliTouchPress"",
-                    ""type"": ""Button"",
-                    ""id"": ""7a37d3ef-cee8-4988-8989-814be39ecc74"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""TouchSecondPosition"",
-                    ""type"": ""Value"",
-                    ""id"": ""4862a590-31c0-455c-9883-8ddaa4811787"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""TouchSecondDelta"",
-                    ""type"": ""Value"",
-                    ""id"": ""a7d2f2cb-821b-4982-8fd4-819ba750292e"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""Scroll"",
-                    ""type"": ""PassThrough"",
-                    ""id"": ""3ab87afa-6de6-4f57-85d4-7a9c605971d4"",
+                    ""id"": ""50536545-4049-4e04-aadc-d9942a919dcd"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""4195983c-6d8e-4812-b097-36f2559beb06"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""09bed715-a58b-4667-821a-23c7b0654a34"",
-                    ""path"": ""<Touchscreen>/delta"",
+                    ""id"": ""7f36cfd7-73d5-434d-ba65-2a7a7e22dac0"",
+                    ""path"": ""<Keyboard>/#(F)"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""mobile;Android"",
-                    ""action"": ""TouchDelta"",
+                    ""groups"": "";PC"",
+                    ""action"": ""Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""4da27ed4-0b8c-4c10-b9dc-56923dd36133"",
-                    ""path"": ""<Mouse>/delta"",
+                    ""name"": ""2D Vector"",
+                    ""id"": ""888a1fa0-6308-497a-a1c9-1bba3bca9368"",
+                    ""path"": ""2DVector"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PC"",
-                    ""action"": ""TouchDelta"",
-                    ""isComposite"": false,
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""89b08773-4d63-4f51-817d-3920af55b155"",
-                    ""path"": ""<Touchscreen>/primaryTouch/position"",
+                    ""name"": ""up"",
+                    ""id"": ""91254c40-5e24-4744-8ca2-6287fa2150ca"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""mobile;Android"",
-                    ""action"": ""TouchPosition"",
+                    ""groups"": "";PC"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""5882a2a6-2f38-46ca-88de-e275de4f89ec"",
-                    ""path"": ""<Mouse>/position"",
+                    ""name"": ""down"",
+                    ""id"": ""fe46fd71-bd34-462b-9e55-f011a41b8386"",
+                    ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PC"",
-                    ""action"": ""TouchPosition"",
+                    ""groups"": "";PC"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""01700c01-1356-4e8e-80f6-252ce434c36b"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""name"": ""left"",
+                    ""id"": ""43f92989-0324-4278-b086-375daba6eb55"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""PC"",
-                    ""action"": ""Press"",
+                    ""groups"": "";PC"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""93f07833-1e4c-4716-8359-19dfd7288643"",
-                    ""path"": ""<Touchscreen>/Press"",
+                    ""name"": ""right"",
+                    ""id"": ""720125e7-0fb6-4dd6-b723-917b4b82dcd3"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""mobile;Android"",
-                    ""action"": ""Press"",
+                    ""groups"": "";PC"",
+                    ""action"": ""Move"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""11fc4b31-d546-4524-82c8-2996f6606e17"",
-                    ""path"": ""<Touchscreen>/Press"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""mobile;Android"",
-                    ""action"": ""UnPress"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""7888bc68-e435-42d2-8772-dfc69be263ec"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""PC"",
-                    ""action"": ""UnPress"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""19f95b38-8cc5-437c-b227-2f85f3b4ed0e"",
-                    ""path"": ""<Touchscreen>/touch*/Press"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""mobile;Android"",
-                    ""action"": ""MutliTouchPress"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""7fa34cf9-e492-48e9-b6de-a06ec05a80d2"",
-                    ""path"": ""<Touchscreen>/touch1/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Android"",
-                    ""action"": ""TouchSecondPosition"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""6ab33636-a025-48d5-a395-2a6f200af5a9"",
-                    ""path"": ""<Touchscreen>/touch1/delta"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Android"",
-                    ""action"": ""TouchSecondDelta"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""fff77c60-f338-4866-8645-0408026ab4fd"",
-                    ""path"": ""<Mouse>/scroll/y"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""PC"",
-                    ""action"": ""Scroll"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -331,21 +211,15 @@ public partial class @TouchControls: IInputActionCollection2, IDisposable
         }
     ]
 }");
-        // Player
-        m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_TouchDelta = m_Player.FindAction("TouchDelta", throwIfNotFound: true);
-        m_Player_TouchPosition = m_Player.FindAction("TouchPosition", throwIfNotFound: true);
-        m_Player_Press = m_Player.FindAction("Press", throwIfNotFound: true);
-        m_Player_UnPress = m_Player.FindAction("UnPress", throwIfNotFound: true);
-        m_Player_MutliTouchPress = m_Player.FindAction("MutliTouchPress", throwIfNotFound: true);
-        m_Player_TouchSecondPosition = m_Player.FindAction("TouchSecondPosition", throwIfNotFound: true);
-        m_Player_TouchSecondDelta = m_Player.FindAction("TouchSecondDelta", throwIfNotFound: true);
-        m_Player_Scroll = m_Player.FindAction("Scroll", throwIfNotFound: true);
+        // PC
+        m_PC = asset.FindActionMap("PC", throwIfNotFound: true);
+        m_PC_Fire = m_PC.FindAction("Fire", throwIfNotFound: true);
+        m_PC_Move = m_PC.FindAction("Move", throwIfNotFound: true);
     }
 
     ~@TouchControls()
     {
-        UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, TouchControls.Player.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_PC.enabled, "This will cause a leak and performance issues, TouchControls.PC.Disable() has not been called.");
     }
 
     /// <summary>
@@ -418,64 +292,34 @@ public partial class @TouchControls: IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // Player
-    private readonly InputActionMap m_Player;
-    private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
-    private readonly InputAction m_Player_TouchDelta;
-    private readonly InputAction m_Player_TouchPosition;
-    private readonly InputAction m_Player_Press;
-    private readonly InputAction m_Player_UnPress;
-    private readonly InputAction m_Player_MutliTouchPress;
-    private readonly InputAction m_Player_TouchSecondPosition;
-    private readonly InputAction m_Player_TouchSecondDelta;
-    private readonly InputAction m_Player_Scroll;
+    // PC
+    private readonly InputActionMap m_PC;
+    private List<IPCActions> m_PCActionsCallbackInterfaces = new List<IPCActions>();
+    private readonly InputAction m_PC_Fire;
+    private readonly InputAction m_PC_Move;
     /// <summary>
-    /// Provides access to input actions defined in input action map "Player".
+    /// Provides access to input actions defined in input action map "PC".
     /// </summary>
-    public struct PlayerActions
+    public struct PCActions
     {
         private @TouchControls m_Wrapper;
 
         /// <summary>
         /// Construct a new instance of the input action map wrapper class.
         /// </summary>
-        public PlayerActions(@TouchControls wrapper) { m_Wrapper = wrapper; }
+        public PCActions(@TouchControls wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "Player/TouchDelta".
+        /// Provides access to the underlying input action "PC/Fire".
         /// </summary>
-        public InputAction @TouchDelta => m_Wrapper.m_Player_TouchDelta;
+        public InputAction @Fire => m_Wrapper.m_PC_Fire;
         /// <summary>
-        /// Provides access to the underlying input action "Player/TouchPosition".
+        /// Provides access to the underlying input action "PC/Move".
         /// </summary>
-        public InputAction @TouchPosition => m_Wrapper.m_Player_TouchPosition;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/Press".
-        /// </summary>
-        public InputAction @Press => m_Wrapper.m_Player_Press;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/UnPress".
-        /// </summary>
-        public InputAction @UnPress => m_Wrapper.m_Player_UnPress;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/MutliTouchPress".
-        /// </summary>
-        public InputAction @MutliTouchPress => m_Wrapper.m_Player_MutliTouchPress;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/TouchSecondPosition".
-        /// </summary>
-        public InputAction @TouchSecondPosition => m_Wrapper.m_Player_TouchSecondPosition;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/TouchSecondDelta".
-        /// </summary>
-        public InputAction @TouchSecondDelta => m_Wrapper.m_Player_TouchSecondDelta;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/Scroll".
-        /// </summary>
-        public InputAction @Scroll => m_Wrapper.m_Player_Scroll;
+        public InputAction @Move => m_Wrapper.m_PC_Move;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
-        public InputActionMap Get() { return m_Wrapper.m_Player; }
+        public InputActionMap Get() { return m_Wrapper.m_PC; }
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
         public void Enable() { Get().Enable(); }
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
@@ -483,9 +327,9 @@ public partial class @TouchControls: IInputActionCollection2, IDisposable
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
         public bool enabled => Get().enabled;
         /// <summary>
-        /// Implicitly converts an <see ref="PlayerActions" /> to an <see ref="InputActionMap" /> instance.
+        /// Implicitly converts an <see ref="PCActions" /> to an <see ref="InputActionMap" /> instance.
         /// </summary>
-        public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
+        public static implicit operator InputActionMap(PCActions set) { return set.Get(); }
         /// <summary>
         /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
         /// </summary>
@@ -493,35 +337,17 @@ public partial class @TouchControls: IInputActionCollection2, IDisposable
         /// <remarks>
         /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
         /// </remarks>
-        /// <seealso cref="PlayerActions" />
-        public void AddCallbacks(IPlayerActions instance)
+        /// <seealso cref="PCActions" />
+        public void AddCallbacks(IPCActions instance)
         {
-            if (instance == null || m_Wrapper.m_PlayerActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_PlayerActionsCallbackInterfaces.Add(instance);
-            @TouchDelta.started += instance.OnTouchDelta;
-            @TouchDelta.performed += instance.OnTouchDelta;
-            @TouchDelta.canceled += instance.OnTouchDelta;
-            @TouchPosition.started += instance.OnTouchPosition;
-            @TouchPosition.performed += instance.OnTouchPosition;
-            @TouchPosition.canceled += instance.OnTouchPosition;
-            @Press.started += instance.OnPress;
-            @Press.performed += instance.OnPress;
-            @Press.canceled += instance.OnPress;
-            @UnPress.started += instance.OnUnPress;
-            @UnPress.performed += instance.OnUnPress;
-            @UnPress.canceled += instance.OnUnPress;
-            @MutliTouchPress.started += instance.OnMutliTouchPress;
-            @MutliTouchPress.performed += instance.OnMutliTouchPress;
-            @MutliTouchPress.canceled += instance.OnMutliTouchPress;
-            @TouchSecondPosition.started += instance.OnTouchSecondPosition;
-            @TouchSecondPosition.performed += instance.OnTouchSecondPosition;
-            @TouchSecondPosition.canceled += instance.OnTouchSecondPosition;
-            @TouchSecondDelta.started += instance.OnTouchSecondDelta;
-            @TouchSecondDelta.performed += instance.OnTouchSecondDelta;
-            @TouchSecondDelta.canceled += instance.OnTouchSecondDelta;
-            @Scroll.started += instance.OnScroll;
-            @Scroll.performed += instance.OnScroll;
-            @Scroll.canceled += instance.OnScroll;
+            if (instance == null || m_Wrapper.m_PCActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PCActionsCallbackInterfaces.Add(instance);
+            @Fire.started += instance.OnFire;
+            @Fire.performed += instance.OnFire;
+            @Fire.canceled += instance.OnFire;
+            @Move.started += instance.OnMove;
+            @Move.performed += instance.OnMove;
+            @Move.canceled += instance.OnMove;
         }
 
         /// <summary>
@@ -530,42 +356,24 @@ public partial class @TouchControls: IInputActionCollection2, IDisposable
         /// <remarks>
         /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
         /// </remarks>
-        /// <seealso cref="PlayerActions" />
-        private void UnregisterCallbacks(IPlayerActions instance)
+        /// <seealso cref="PCActions" />
+        private void UnregisterCallbacks(IPCActions instance)
         {
-            @TouchDelta.started -= instance.OnTouchDelta;
-            @TouchDelta.performed -= instance.OnTouchDelta;
-            @TouchDelta.canceled -= instance.OnTouchDelta;
-            @TouchPosition.started -= instance.OnTouchPosition;
-            @TouchPosition.performed -= instance.OnTouchPosition;
-            @TouchPosition.canceled -= instance.OnTouchPosition;
-            @Press.started -= instance.OnPress;
-            @Press.performed -= instance.OnPress;
-            @Press.canceled -= instance.OnPress;
-            @UnPress.started -= instance.OnUnPress;
-            @UnPress.performed -= instance.OnUnPress;
-            @UnPress.canceled -= instance.OnUnPress;
-            @MutliTouchPress.started -= instance.OnMutliTouchPress;
-            @MutliTouchPress.performed -= instance.OnMutliTouchPress;
-            @MutliTouchPress.canceled -= instance.OnMutliTouchPress;
-            @TouchSecondPosition.started -= instance.OnTouchSecondPosition;
-            @TouchSecondPosition.performed -= instance.OnTouchSecondPosition;
-            @TouchSecondPosition.canceled -= instance.OnTouchSecondPosition;
-            @TouchSecondDelta.started -= instance.OnTouchSecondDelta;
-            @TouchSecondDelta.performed -= instance.OnTouchSecondDelta;
-            @TouchSecondDelta.canceled -= instance.OnTouchSecondDelta;
-            @Scroll.started -= instance.OnScroll;
-            @Scroll.performed -= instance.OnScroll;
-            @Scroll.canceled -= instance.OnScroll;
+            @Fire.started -= instance.OnFire;
+            @Fire.performed -= instance.OnFire;
+            @Fire.canceled -= instance.OnFire;
+            @Move.started -= instance.OnMove;
+            @Move.performed -= instance.OnMove;
+            @Move.canceled -= instance.OnMove;
         }
 
         /// <summary>
-        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="PlayerActions.UnregisterCallbacks(IPlayerActions)" />.
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="PCActions.UnregisterCallbacks(IPCActions)" />.
         /// </summary>
-        /// <seealso cref="PlayerActions.UnregisterCallbacks(IPlayerActions)" />
-        public void RemoveCallbacks(IPlayerActions instance)
+        /// <seealso cref="PCActions.UnregisterCallbacks(IPCActions)" />
+        public void RemoveCallbacks(IPCActions instance)
         {
-            if (m_Wrapper.m_PlayerActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_PCActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
@@ -575,21 +383,21 @@ public partial class @TouchControls: IInputActionCollection2, IDisposable
         /// <remarks>
         /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
         /// </remarks>
-        /// <seealso cref="PlayerActions.AddCallbacks(IPlayerActions)" />
-        /// <seealso cref="PlayerActions.RemoveCallbacks(IPlayerActions)" />
-        /// <seealso cref="PlayerActions.UnregisterCallbacks(IPlayerActions)" />
-        public void SetCallbacks(IPlayerActions instance)
+        /// <seealso cref="PCActions.AddCallbacks(IPCActions)" />
+        /// <seealso cref="PCActions.RemoveCallbacks(IPCActions)" />
+        /// <seealso cref="PCActions.UnregisterCallbacks(IPCActions)" />
+        public void SetCallbacks(IPCActions instance)
         {
-            foreach (var item in m_Wrapper.m_PlayerActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_PCActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_PlayerActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_PCActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
     /// <summary>
-    /// Provides a new <see cref="PlayerActions" /> instance referencing this action map.
+    /// Provides a new <see cref="PCActions" /> instance referencing this action map.
     /// </summary>
-    public PlayerActions @Player => new PlayerActions(this);
+    public PCActions @PC => new PCActions(this);
     private int m_PCSchemeIndex = -1;
     /// <summary>
     /// Provides access to the input control scheme.
@@ -617,67 +425,25 @@ public partial class @TouchControls: IInputActionCollection2, IDisposable
         }
     }
     /// <summary>
-    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Player" which allows adding and removing callbacks.
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "PC" which allows adding and removing callbacks.
     /// </summary>
-    /// <seealso cref="PlayerActions.AddCallbacks(IPlayerActions)" />
-    /// <seealso cref="PlayerActions.RemoveCallbacks(IPlayerActions)" />
-    public interface IPlayerActions
+    /// <seealso cref="PCActions.AddCallbacks(IPCActions)" />
+    /// <seealso cref="PCActions.RemoveCallbacks(IPCActions)" />
+    public interface IPCActions
     {
         /// <summary>
-        /// Method invoked when associated input action "TouchDelta" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Fire" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnTouchDelta(InputAction.CallbackContext context);
+        void OnFire(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "TouchPosition" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Move" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnTouchPosition(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "Press" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnPress(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "UnPress" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnUnPress(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "MutliTouchPress" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnMutliTouchPress(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "TouchSecondPosition" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnTouchSecondPosition(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "TouchSecondDelta" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnTouchSecondDelta(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "Scroll" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnScroll(InputAction.CallbackContext context);
+        void OnMove(InputAction.CallbackContext context);
     }
 }

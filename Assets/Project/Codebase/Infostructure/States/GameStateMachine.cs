@@ -19,7 +19,9 @@ namespace Assets.Project.CodeBase.Infostructure.States
             _states = new Dictionary<Type, IExitableState>
             {
                 [typeof(BootstrapState)] = new BootstrapState(this),
-                [typeof(LoadProgressState)] = new LoadProgressState(this, DI.ResolveSync<ISceneService>(),DI.ResolveSync<ISaveService>()),
+                [typeof(LoadProgressState)] = new LoadProgressState(this, 
+                                                                    DI.ResolveSync<ISceneService>(),
+                                                                    DI.ResolveSync<ISaveService>()),
                 [typeof(LoadLevelState)] = new LoadLevelState(this),
 
                 [typeof(GameLoopState)] = new GameLoopState(this),

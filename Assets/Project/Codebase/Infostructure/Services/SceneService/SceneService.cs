@@ -84,7 +84,6 @@ namespace Assets.Project.CodeBase.Infostructure.Services.SceneService
                 await UniTask.Delay(10);
                 _sceneTransition.SetProgress(k);
             }
-            //await SceneManager.UnloadSceneAsync(SceneNames.GetSceneName(SceneNames.Name.Loading));
             GC.Collect();
             await _sceneTransition.EndAnimation();
             OnSceneLoaded?.Invoke();
@@ -95,19 +94,6 @@ namespace Assets.Project.CodeBase.Infostructure.Services.SceneService
         public bool IsLoading() =>
             _isLoading;
 
-
-        //private async UniTask<LoadingUI> InitLoadingScene()
-        //{
-        //    string LastScene = SceneManager.GetActiveScene().name;
-        //    Scene LoaderScene = await _sceneLoader.LoadAdditive(SceneNames.GetSceneName(SceneNames.Name.Loading));
-        //    SceneManager.SetActiveScene(LoaderScene);
-        //    LoadingUI loadUI = await InitializeLoadingUI();
-        //    await SceneManager.UnloadSceneAsync(LastScene);
-        //    return loadUI;
-        //}
-
-        //private async UniTask<LoadingUI> InitializeLoadingUI() =>
-        //    await AllServices.Container.SingleAwait<LoadingUI>();
     }
 
 

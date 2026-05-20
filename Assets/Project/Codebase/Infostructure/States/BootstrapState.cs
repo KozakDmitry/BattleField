@@ -17,17 +17,17 @@ namespace Assets.Project.CodeBase.Infostructure.States
         public BootstrapState(IGameStateMachine stateMachine)
         {
             _stateMachine = stateMachine;
+            RegisterGlobalServices();
         }
 
         public async UniTask Enter(string startScene)
         {
-            await RegisterServices();
             CheckStartScene(ref startScene);
             await DI.ResolveSync<ISceneService>().LoadFirstScene(SceneNames.GetSceneName(Initial));
             EnterLoadLevel(startScene);
         }
 
-        private async UniTask RegisterServices()
+        private void RegisterGlobalServices()
         {
             ProgressService progressService = new ProgressService();
 

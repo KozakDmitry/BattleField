@@ -21,5 +21,11 @@ namespace Assets.Project.CodeBase.Logic.Shared
         }
 #pragma warning restore CS1998
 
+
+
+        public virtual void CleanUp()
+        {
+
+        }
     }
 }

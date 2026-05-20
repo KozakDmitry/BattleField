@@ -10,8 +10,8 @@ namespace Assets.Project.CodeBase.Infostructure.Input
     public class InputService : IInputService
     {
 
-        public delegate void StartT(Vector2 position, float time);
-        public event StartT OnStartEvent;
+        public delegate void Move(Vector2 position);
+        public event Move OnMoveEvent;
         public delegate void EndT(Vector2 position, float time);
         public event EndT OnEndEvent;
 
@@ -25,25 +25,17 @@ namespace Assets.Project.CodeBase.Infostructure.Input
 
         private void RegisterEvents()
         {
-            _touchControls.Player.Press.started += ctx => StartTouch(ctx);
-            _touchControls.Player.Press.canceled += ctx => EndTouch(ctx);
+            _touchControls.PC.Move.performed += OnMove;
         }
 
-        private void EndTouch(InputAction.CallbackContext ctx)
+        private void OnMove(InputAction.CallbackContext context)
         {
-            if (OnEndEvent != null)
-            {
-                OnEndEvent?.Invoke(_touchControls.Player.TouchPosition.ReadValue<Vector2>(), (float)ctx.time);
-            }
+            OnMoveEvent?.Invoke(_touchControls.PC.Move.ReadValue<Vector2>());
         }
 
-        private void StartTouch(InputAction.CallbackContext ctx)
-        {
-            if (OnStartEvent != null)
-            {
-                OnStartEvent?.Invoke(_touchControls.Player.TouchPosition.ReadValue<Vector2>(), (float)ctx.startTime);
-            }
-        }
+
+
+
 
         public void Disable() =>
             _touchControls.Disable();
