@@ -518,7 +518,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d986c5219fb93348b8dcdfd5139a875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Assets.Project.CodeBase.Logic.Shared.SetupController
-  InitializableWindowList: []
+  InitializableWindowList:
+  - {fileID: 6868033785223124653}
 --- !u!4 &1886418652
 Transform:
   m_ObjectHideFlags: 0
@@ -591,6 +592,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64f4521f824e4284e889d17aacbb154f, type: 3}
+--- !u!114 &6868033785223124653 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3156698138827004374, guid: 64f4521f824e4284e889d17aacbb154f, type: 3}
+  m_PrefabInstance: {fileID: 6868033785223124652}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ee0891d620d5b14293bcd4c4a7f1bc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Project.Codebase.Logic.Gameplay.Field.FieldBuilder
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
