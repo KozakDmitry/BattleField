@@ -11,6 +11,8 @@ namespace Assets.Project.CodeBase.StaticData
         private static readonly ConcurrentDictionary<string, object> _cache = new();
         private static readonly ConcurrentDictionary<string, TaskCompletionSource<object>> _pendingLoads = new();
 
+
+
         public static async UniTask<T> LoadAsset<T>(AssetReference reference) where T : class
         {
             if (reference is null)
@@ -45,5 +47,13 @@ namespace Assets.Project.CodeBase.StaticData
                 _pendingLoads.TryRemove(reference.AssetGUID, out _);
             }
         }
+    }
+
+
+    public enum StaticDataCategory
+    {
+        Shared =0,
+        Menu =1,
+        Gameplay = 0,
     }
 }

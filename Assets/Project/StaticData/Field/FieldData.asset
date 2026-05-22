@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95a288da3796b704c86b8eec0e09e5c7, type: 3}
-  m_Name: AddressablesGroupMapping
-  m_EditorClassIdentifier: Assembly-CSharp::AddressablesGroupMapping
+  m_Script: {fileID: 11500000, guid: f51639c18c0022448845faaa027f2a30, type: 3}
+  m_Name: FieldData
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Project.Codebase.StaticData.DataLists.FieldData
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
@@ -21,41 +21,29 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: m_Entries
+    - Name: levels
       Entry: 7
-      Data: 0|System.Collections.Generic.Dictionary`2[[Generated.Addressables.AddressablesAssetName,
-        Assembly-CSharp],[AddressablesGroupEntry, Assembly-CSharp]], mscorlib
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib],[UnityEngine.AddressableAssets.AssetReference,
+        Unity.Addressables]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[Generated.Addressables.AddressablesAssetName,
-        Assembly-CSharp]], mscorlib
-    - Name: 
-      Entry: 12
-      Data: 0
-    - Name: 
-      Entry: 13
-      Data: 
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.Int32,
+        mscorlib]], mscorlib
     - Name: 
       Entry: 8
       Data: 
     - Name: 
       Entry: 12
-      Data: 4
+      Data: 1
     - Name: 
       Entry: 7
       Data: 
     - Name: $k
       Entry: 3
-      Data: 3
+      Data: 0
     - Name: $v
       Entry: 7
-      Data: 2|AddressablesGroupEntry, Assembly-CSharp
-    - Name: addressableGroup
-      Entry: 3
-      Data: 1
-    - Name: assetReference
-      Entry: 7
-      Data: 3|UnityEngine.AddressableAssets.AssetReference, Unity.Addressables
+      Data: 2|UnityEngine.AddressableAssets.AssetReference, Unity.Addressables
     - Name: m_AssetGUID
       Entry: 1
       Data: bd3982500c54f49478bec35d9595116b
@@ -66,11 +54,11 @@ MonoBehaviour:
       Entry: 6
       Data: 
     - Name: m_SubObjectGUID
-      Entry: 6
+      Entry: 1
       Data: 
     - Name: m_EditorAssetChanged
       Entry: 5
-      Data: false
+      Data: true
     - Name: 
       Entry: 8
       Data: 
@@ -78,26 +66,33 @@ MonoBehaviour:
       Entry: 8
       Data: 
     - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
       Entry: 8
       Data: 
+    - Name: players
+      Entry: 7
+      Data: 3|System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib],[UnityEngine.AddressableAssets.AssetReference,
+        Unity.Addressables]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 1
+    - Name: 
+      Entry: 12
+      Data: 3
     - Name: 
       Entry: 7
       Data: 
     - Name: $k
       Entry: 3
-      Data: 2
+      Data: 0
     - Name: $v
       Entry: 7
-      Data: 4|AddressablesGroupEntry, Assembly-CSharp
-    - Name: addressableGroup
-      Entry: 3
-      Data: 2
-    - Name: assetReference
-      Entry: 7
-      Data: 5|UnityEngine.AddressableAssets.AssetReference, Unity.Addressables
+      Data: 4|UnityEngine.AddressableAssets.AssetReference, Unity.Addressables
     - Name: m_AssetGUID
       Entry: 1
-      Data: 0806941e063a7aa4591159dc9eca2491
+      Data: c7cae9e76bde8074ca7b8cf23e8063da
     - Name: m_SubObjectName
       Entry: 6
       Data: 
@@ -105,14 +100,11 @@ MonoBehaviour:
       Entry: 6
       Data: 
     - Name: m_SubObjectGUID
-      Entry: 6
+      Entry: 1
       Data: 
     - Name: m_EditorAssetChanged
       Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
+      Data: true
     - Name: 
       Entry: 8
       Data: 
@@ -127,13 +119,7 @@ MonoBehaviour:
       Data: 1
     - Name: $v
       Entry: 7
-      Data: 6|AddressablesGroupEntry, Assembly-CSharp
-    - Name: addressableGroup
-      Entry: 3
-      Data: 2
-    - Name: assetReference
-      Entry: 7
-      Data: 7|UnityEngine.AddressableAssets.AssetReference, Unity.Addressables
+      Data: 5|UnityEngine.AddressableAssets.AssetReference, Unity.Addressables
     - Name: m_AssetGUID
       Entry: 1
       Data: 9a71aab1ace39174b9cba3b808c76988
@@ -144,14 +130,11 @@ MonoBehaviour:
       Entry: 6
       Data: 
     - Name: m_SubObjectGUID
-      Entry: 6
+      Entry: 1
       Data: 
     - Name: m_EditorAssetChanged
       Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
+      Data: true
     - Name: 
       Entry: 8
       Data: 
@@ -163,19 +146,13 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 0
+      Data: 2
     - Name: $v
       Entry: 7
-      Data: 8|AddressablesGroupEntry, Assembly-CSharp
-    - Name: addressableGroup
-      Entry: 3
-      Data: 2
-    - Name: assetReference
-      Entry: 7
-      Data: 9|UnityEngine.AddressableAssets.AssetReference, Unity.Addressables
+      Data: 6|UnityEngine.AddressableAssets.AssetReference, Unity.Addressables
     - Name: m_AssetGUID
       Entry: 1
-      Data: c7cae9e76bde8074ca7b8cf23e8063da
+      Data: 0806941e063a7aa4591159dc9eca2491
     - Name: m_SubObjectName
       Entry: 6
       Data: 
@@ -183,14 +160,11 @@ MonoBehaviour:
       Entry: 6
       Data: 
     - Name: m_SubObjectGUID
-      Entry: 6
+      Entry: 1
       Data: 
     - Name: m_EditorAssetChanged
       Entry: 5
-      Data: false
-    - Name: 
-      Entry: 8
-      Data: 
+      Data: true
     - Name: 
       Entry: 8
       Data: 
