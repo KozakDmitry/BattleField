@@ -3,6 +3,7 @@ using Assets.Project.CodeBase.Infostructure.Input;
 using Assets.Project.CodeBase.Infostructure.Services;
 using Assets.Project.CodeBase.Infostructure.Services.ProgressService;
 using Assets.Project.CodeBase.Infostructure.Services.SaveService;
+using Assets.Project.CodeBase.Infostructure.Services.SaveSystem;
 using Assets.Project.CodeBase.Infostructure.Services.SceneService;
 using Cysharp.Threading.Tasks;
 using System;
@@ -33,6 +34,7 @@ namespace Assets.Project.CodeBase.Infostructure.States
 
             DI.Register<IInputService>(new InputService());
             DI.Register<ISaveService>(new SaveService(progressService));
+            DI.Register<ISaveSystem>(new JsonSaveSystem());
             DI.Register<ISceneService>(new SceneService(_stateMachine,
                                                         DI.ResolveSync<IInputService>()));
         }
