@@ -15,16 +15,6 @@ MonoBehaviour:
   m_GroupName: Players-Local
   m_GUID: e4936acd2a3677e4dbceea88e3724577
   m_SerializeEntries:
-  - m_GUID: 0806941e063a7aa4591159dc9eca2491
-    m_Address: Cube3
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9a71aab1ace39174b9cba3b808c76988
-    m_Address: Cube2
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c7cae9e76bde8074ca7b8cf23e8063da
     m_Address: Cube1
     m_ReadOnly: 0

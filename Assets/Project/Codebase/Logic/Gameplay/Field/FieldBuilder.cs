@@ -1,6 +1,8 @@
 ﻿using Assets.Project.CodeBase.Data.Progress.SaveData;
 using Assets.Project.CodeBase.Infostructure.Services.SaveSystem;
+using Assets.Project.Codebase.Logic.Gameplay.Cam;
 using Assets.Project.Codebase.Logic.Gameplay.Field.SpawnPoints;
+using Assets.Project.Codebase.Logic.Gameplay.Player;
 using Assets.Project.Codebase.StaticData;
 using Assets.Project.CodeBase.Logic.Shared;
 using Assets.Project.CodeBase.StaticData;
@@ -13,6 +15,7 @@ namespace Assets.Project.Codebase.Logic.Gameplay.Field
     public class FieldBuilder : InitializableWindow, IFieldBuilder
     {
         private IField _field;
+        private IPlayerSpawner _playerSpawner;
         private ISaveSystem _saveSystem;
         private int _currentLevel;
 
@@ -20,6 +23,7 @@ namespace Assets.Project.Codebase.Logic.Gameplay.Field
         {
             _field = GetComponent<IField>();
             _saveSystem = DI.ResolveSync<ISaveSystem>();
+            _playerSpawner = new PlayerSpawner();
 
             await BuildField();
         }
@@ -33,19 +37,36 @@ namespace Assets.Project.Codebase.Logic.Gameplay.Field
         public async UniTask BuildField()
         {
             CheckCurrentLevel();
-            GameObject prefab = await StaticDataService.LoadAsset<GameObject>(AddressablesNames.Field + _currentLevel, null);
+            GameObject prefab = await StaticDataService.LoadAsset<GameObject>(AddressablesNames.Field + _currentLevel);
             _field.Spawn(prefab);
-
-            FieldObject fieldObject = _field.FieldObject.GetComponent<FieldObject>();
-            Vector3 spawnPosition = fieldObject.spawnPoint.GetSpawnPosition();
-
-            await SpawnPlayer(spawnPosition);
+            await SpawnPlayer();
         }
 
-        private async UniTask SpawnPlayer(Vector3 position)
+        private async UniTask SpawnPlayer()
         {
-            GameObject prefab = await StaticDataService.LoadAsset<GameObject>(AddressablesNames.Player, null);
-            Object.Instantiate(prefab, position, Quaternion.identity);
+            await _playerSpawner.Spawn(_field.GetSpawnPosition());
+
+            Transform playerTransform = _playerSpawner.PlayerInstance.transform;
+            AttachCamera(playerTransform);
+        }
+
+        private static void AttachCamera(Transform playerTransform)
+        {
+            ICameraFollow cameraFollow = DI.ResolveSync<ICameraFollow>();
+            if (cameraFollow == null)
+            {
+                Debug.LogWarning("FieldBuilder->CameraFollow is null to attack");
+            }
+            else
+            {
+                cameraFollow.FollowTarget(playerTransform);
+            }
+        }
+
+        public override void CleanUp()
+        {
+            _playerSpawner?.CleanUp();
+            base.CleanUp();
         }
     }
 }

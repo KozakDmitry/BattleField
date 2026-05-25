@@ -149,11 +149,17 @@ public class DIContainer
     {
         _currentCancellationToken?.Cancel();
         _currentCancellationToken = new();
-        var list = new List<DIRegistration>(_registrations.Values);
-        foreach (var item in list)
+        var keysToRemove = new List<(Type type, string tag)>();
+        foreach (var kvp in _registrations)
         {
-            if (item.mode == RegisterMode.scene) Remove(item.Instance.GetType());
+            if (kvp.Value.Instance == null || kvp.Value.mode == RegisterMode.scene)
+            {
+                keysToRemove.Add(kvp.Key);
+
+            }
         }
+        foreach (var key in keysToRemove)
+            _registrations.Remove(key);
     }
 }
 

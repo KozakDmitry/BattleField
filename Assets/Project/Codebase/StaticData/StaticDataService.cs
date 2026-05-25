@@ -49,7 +49,7 @@ namespace Assets.Project.CodeBase.StaticData
             }
         }
 
-        public static async UniTask<T> LoadAsset<T>(string assetId, Transform parent = null) where T : class
+        public static async UniTask<T> LoadAsset<T>(string assetId) where T : class
         {
             if (string.IsNullOrEmpty(assetId))
                 throw new ArgumentNullException(nameof(assetId));

@@ -12,7 +12,7 @@ namespace Assets.Project.CodeBase.Infostructure.Input
 
         public delegate void Move(Vector2 position);
         public event Move OnMoveEvent;
-        public delegate void EndT(Vector2 position, float time);
+        public delegate void EndT(Vector2 position);
         public event EndT OnEndEvent;
 
         private TouchControls _touchControls;
@@ -26,6 +26,7 @@ namespace Assets.Project.CodeBase.Infostructure.Input
         private void RegisterEvents()
         {
             _touchControls.PC.Move.performed += OnMove;
+            _touchControls.PC.Move.canceled += OnEndMove;
         }
 
         private void OnMove(InputAction.CallbackContext context)
@@ -34,7 +35,10 @@ namespace Assets.Project.CodeBase.Infostructure.Input
         }
 
 
-
+        private void OnEndMove(InputAction.CallbackContext context)
+        {
+            OnEndEvent?.Invoke(_touchControls.PC.Move.ReadValue<Vector2>());
+        }
 
 
         public void Disable() =>
