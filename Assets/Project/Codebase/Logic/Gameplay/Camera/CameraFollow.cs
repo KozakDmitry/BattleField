@@ -44,10 +44,8 @@ namespace Assets.Project.Codebase.Logic.Gameplay.Cam
             _isInit = true;
         }
 
-        private void UpdateZoom(Vector2 position)
-        {
+        private void UpdateZoom(Vector2 position) =>
             _scrollDelta = position;
-        }
 
 
 
