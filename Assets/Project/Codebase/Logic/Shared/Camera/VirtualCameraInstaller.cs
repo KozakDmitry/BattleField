@@ -13,16 +13,18 @@ namespace Assets.Project.Codebase.Logic.Shared.Cam
         [SerializeField]
         private CinemachineCamera _virtualCamera;
         [SerializeField]
-        private CinemachineCameraOffset _cameraOffset;
-
+        private CinemachineOrbitalFollow _orbitalFollow;
+        
         private void Awake()
         {
             DI.Register<VirtualCameraInstaller>(this, mode: RegisterMode.scene);
         }
 
+        public CinemachineOrbitalFollow OrbitalFollow =>
+            _orbitalFollow;
+
         public CinemachineCamera CinemachineCamera => 
             _virtualCamera;
-        public CinemachineCameraOffset CameraOffset =>
-           _cameraOffset;
+
     }
 }

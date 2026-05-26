@@ -19,7 +19,10 @@ namespace Assets.Project.Codebase.Logic.Gameplay.Player
                 position.y = hit.point.y;
 
             _playerInstance = Object.Instantiate(prefab, position, Quaternion.identity).GetComponent<PlayerController>();
-            _playerInstance.Initialize();
+
+            PlayerCameraController cameraController = new PlayerCameraController();
+            cameraController.Initialize(_playerInstance);
+            _playerInstance.Initialize(cameraController.CameraTransform);
         }
 
         public void CleanUp()

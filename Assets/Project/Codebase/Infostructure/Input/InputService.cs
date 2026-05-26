@@ -14,6 +14,8 @@ namespace Assets.Project.CodeBase.Infostructure.Input
         public event Move OnMoveEvent;
         public delegate void EndT(Vector2 position);
         public event EndT OnEndEvent;
+        public delegate void OnMouseZ(Vector2 position);
+        public event OnMouseZ OnMouseZoom;
 
         private TouchControls _touchControls;
         public InputService()
@@ -27,18 +29,23 @@ namespace Assets.Project.CodeBase.Infostructure.Input
         {
             _touchControls.PC.Move.performed += OnMove;
             _touchControls.PC.Move.canceled += OnEndMove;
+            RegisterCameraEvents();
         }
 
-        private void OnMove(InputAction.CallbackContext context)
+        private void RegisterCameraEvents()
         {
+            _touchControls.PC.MouseZoom.performed += OnMouseZoomed;
+        }
+
+        private void OnMouseZoomed(InputAction.CallbackContext context) =>
+            OnMouseZoom?.Invoke(context.ReadValue<Vector2>());
+
+        private void OnMove(InputAction.CallbackContext context) => 
             OnMoveEvent?.Invoke(_touchControls.PC.Move.ReadValue<Vector2>());
-        }
 
 
-        private void OnEndMove(InputAction.CallbackContext context)
-        {
+        private void OnEndMove(InputAction.CallbackContext context) =>
             OnEndEvent?.Invoke(_touchControls.PC.Move.ReadValue<Vector2>());
-        }
 
 
         public void Disable() =>

@@ -8,6 +8,7 @@ namespace Assets.Project.CodeBase.Infostructure.Input
     {
         event InputService.Move OnMoveEvent;
         event InputService.EndT OnEndEvent;
+        event InputService.OnMouseZ OnMouseZoom;
 
         void Disable();
         void Enable();

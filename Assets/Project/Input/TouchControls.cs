@@ -109,6 +109,15 @@ public partial class @TouchControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MouseZoom"",
+                    ""type"": ""Value"",
+                    ""id"": ""5dbfbd7a-456e-47e7-940a-bc20e93a1319"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -177,6 +186,17 @@ public partial class @TouchControls: IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""af65a571-09c7-45d4-b212-efc0f43075a1"",
+                    ""path"": ""<Mouse>/scroll"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";PC"",
+                    ""action"": ""MouseZoom"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -215,6 +235,7 @@ public partial class @TouchControls: IInputActionCollection2, IDisposable
         m_PC = asset.FindActionMap("PC", throwIfNotFound: true);
         m_PC_Fire = m_PC.FindAction("Fire", throwIfNotFound: true);
         m_PC_Move = m_PC.FindAction("Move", throwIfNotFound: true);
+        m_PC_MouseZoom = m_PC.FindAction("MouseZoom", throwIfNotFound: true);
     }
 
     ~@TouchControls()
@@ -297,6 +318,7 @@ public partial class @TouchControls: IInputActionCollection2, IDisposable
     private List<IPCActions> m_PCActionsCallbackInterfaces = new List<IPCActions>();
     private readonly InputAction m_PC_Fire;
     private readonly InputAction m_PC_Move;
+    private readonly InputAction m_PC_MouseZoom;
     /// <summary>
     /// Provides access to input actions defined in input action map "PC".
     /// </summary>
@@ -316,6 +338,10 @@ public partial class @TouchControls: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "PC/Move".
         /// </summary>
         public InputAction @Move => m_Wrapper.m_PC_Move;
+        /// <summary>
+        /// Provides access to the underlying input action "PC/MouseZoom".
+        /// </summary>
+        public InputAction @MouseZoom => m_Wrapper.m_PC_MouseZoom;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -348,6 +374,9 @@ public partial class @TouchControls: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
+            @MouseZoom.started += instance.OnMouseZoom;
+            @MouseZoom.performed += instance.OnMouseZoom;
+            @MouseZoom.canceled += instance.OnMouseZoom;
         }
 
         /// <summary>
@@ -365,6 +394,9 @@ public partial class @TouchControls: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
+            @MouseZoom.started -= instance.OnMouseZoom;
+            @MouseZoom.performed -= instance.OnMouseZoom;
+            @MouseZoom.canceled -= instance.OnMouseZoom;
         }
 
         /// <summary>
@@ -445,5 +477,12 @@ public partial class @TouchControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMove(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "MouseZoom" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnMouseZoom(InputAction.CallbackContext context);
     }
 }

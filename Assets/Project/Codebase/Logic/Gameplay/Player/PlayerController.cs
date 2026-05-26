@@ -7,16 +7,19 @@ namespace Assets.Project.Codebase.Logic.Gameplay.Player
 {
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField] private float _speed = 5f;
+        [SerializeField] private float _speed = 1f;
+        [SerializeField] private CharacterController _characterController;
 
 
         private bool _isInit = false;
 
+        private Transform _cameraTransform;
         private Rigidbody _rb;
         private IInputService _inputService;
         private Vector2 _moveDirection;
-        public void Initialize()
+        public void Initialize(Transform cameraTransform)
         {
+            _cameraTransform = cameraTransform;
             SetBaseValues();
             _inputService = DI.ResolveSync<IInputService>();
             _inputService.OnMoveEvent += UpdateMoveDirection;
@@ -42,12 +45,27 @@ namespace Assets.Project.Codebase.Logic.Gameplay.Player
             }
         }
 
+
+        private Vector3 _tempForward,
+                        _tempRight;
+
         private void FixedUpdate()
         {
-            if (_isInit)
+            if (!_isInit)
             {
-                _rb.angularVelocity = new Vector2(_moveDirection.x * _speed, _moveDirection.y * _speed);
+                return;
             }
+            _tempForward = _cameraTransform.forward;
+            _tempRight = _cameraTransform.right;
+
+            _tempForward.y = 0;
+            _tempRight.y = 0;
+            _tempForward.Normalize();
+            _tempRight.Normalize();
+
+            Vector3 moveDirection = _tempForward * _moveDirection.y + _tempRight * _moveDirection.x;
+            _characterController.Move(moveDirection * _speed * Time.deltaTime);
+
         }
     }
 }

@@ -46,22 +46,8 @@ namespace Assets.Project.Codebase.Logic.Gameplay.Field
         {
             await _playerSpawner.Spawn(_field.GetSpawnPosition());
 
-            Transform playerTransform = _playerSpawner.PlayerInstance.transform;
-            AttachCamera(playerTransform);
         }
 
-        private static void AttachCamera(Transform playerTransform)
-        {
-            ICameraFollow cameraFollow = DI.ResolveSync<ICameraFollow>();
-            if (cameraFollow == null)
-            {
-                Debug.LogWarning("FieldBuilder->CameraFollow is null to attack");
-            }
-            else
-            {
-                cameraFollow.FollowTarget(playerTransform);
-            }
-        }
 
         public override void CleanUp()
         {
