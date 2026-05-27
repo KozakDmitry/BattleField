@@ -65,9 +65,7 @@ namespace Assets.Project.Codebase.Logic.Gameplay.Cam
             _vcam.OrbitalFollow.Radius = _currentZoom;
         }
 
-        public void FollowTarget(Transform target)
-        {
+        public void FollowTarget(Transform target) =>
             _vcam.CinemachineCamera.Follow = target;
-        }
     }
 }
