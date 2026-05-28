@@ -20,12 +20,14 @@ namespace Assets.Project.Codebase.Logic.Gameplay.Cam
         private float _minDistance = 3f;
         [SerializeField]
         private float _maxDistance = 15f;
+        [SerializeField]
+        private float _targetZoom = 5f;
+
 
 
         private VirtualCameraInstaller _vcam;
 
         private Vector2 _scrollDelta;
-        private float _targetZoom;
         private float _currentZoom;
         private bool _isInit = false;
         private IInputService _inputService;
@@ -55,13 +57,13 @@ namespace Assets.Project.Codebase.Logic.Gameplay.Cam
             {
                 return;
             }
-            if (_scrollDelta.y != 0&& _vcam.OrbitalFollow!=null)
+            if (_scrollDelta.y != 0 && _vcam.OrbitalFollow != null)
             {
-                _targetZoom = Math.Clamp(_vcam.OrbitalFollow.Radius - _scrollDelta.y*_zoomSpeed, _minDistance, _maxDistance);
+                _targetZoom = Math.Clamp(_vcam.OrbitalFollow.Radius - _scrollDelta.y * _zoomSpeed, _minDistance, _maxDistance);
                 _scrollDelta = Vector2.zero;
             }
 
-            _currentZoom = Mathf.Lerp(_currentZoom,_targetZoom, Time.deltaTime*_zoomLerpSpeed);
+            _currentZoom = Mathf.Lerp(_currentZoom, _targetZoom, Time.deltaTime * _zoomLerpSpeed);
             _vcam.OrbitalFollow.Radius = _currentZoom;
         }
 

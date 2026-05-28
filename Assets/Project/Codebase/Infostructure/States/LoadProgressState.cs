@@ -23,7 +23,7 @@ namespace Assets.Project.CodeBase.Infostructure.States
 
         public async UniTask Enter(string startScene)
         {
-            Application.targetFrameRate = 60;
+            //Application.targetFrameRate = 60;
             _saveService.Load();
             await _sceneService.LoadScene(startScene);
         }

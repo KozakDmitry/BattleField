@@ -9,7 +9,7 @@ namespace Assets.Project.Codebase.Logic.Gameplay.Player
     {
         [SerializeField] private float _speed = 1f;
         [SerializeField] private CharacterController _characterController;
-
+        [SerializeField] private bool _isLookForward;
 
         private bool _isInit = false;
 
@@ -55,17 +55,26 @@ namespace Assets.Project.Codebase.Logic.Gameplay.Player
             {
                 return;
             }
+
             _tempForward = _cameraTransform.forward;
             _tempRight = _cameraTransform.right;
 
-            _tempForward.y = 0;
-            _tempRight.y = 0;
+            _tempForward.y = 0f;
+            _tempRight.y = 0f;
             _tempForward.Normalize();
             _tempRight.Normalize();
+            Vector3 move = _tempForward * _moveDirection.y + _tempRight * _moveDirection.x;
+            _characterController.Move(_speed * Time.fixedDeltaTime * move);
 
-            Vector3 moveDirection = _tempForward * _moveDirection.y + _tempRight * _moveDirection.x;
-            _characterController.Move(moveDirection * _speed * Time.deltaTime);
+            if (_isLookForward && move.sqrMagnitude > 0.001f)
+            {
+                Quaternion rotation = Quaternion.LookRotation(move, Vector3.up);
+                transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 10 * Time.fixedDeltaTime);
+            }
 
+
+            //Vector3 move = new Vector3(_moveDirection.x, 0f, _moveDirection.y);
+            //_characterController.Move(_speed * Time.deltaTime * move);
         }
     }
 }
