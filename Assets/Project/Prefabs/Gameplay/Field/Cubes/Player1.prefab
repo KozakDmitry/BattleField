@@ -291,6 +291,5 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b9bfa2c7e41a59349b5d60af38410e21, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Assets.Project.Codebase.Logic.Gameplay.Player.PlayerController
-  _speed: 1
+  m_EditorClassIdentifier: Assembly-CSharp::Assets.Project.Codebase.Logic.Gameplay.Player.MovementController
   _characterController: {fileID: 3200211001266983510}

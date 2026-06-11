@@ -7,22 +7,23 @@ namespace Assets.Project.Codebase.Logic.Gameplay.Player
 {
     public class PlayerSpawner : IPlayerSpawner
     {
-        private PlayerController _playerInstance;
+        private MovementController _playerInstance;
 
-        public PlayerController PlayerInstance => _playerInstance;
+        public MovementController PlayerInstance => _playerInstance;
 
         public async UniTask Spawn(Vector3 position)
         {
             GameObject prefab = await StaticDataService.LoadAsset<GameObject>(AddressablesNames.Player);
+            PlayerConfig playerConfig = await StaticDataService.LoadAsset<PlayerConfig>(AddressablesNames.PlayerConfig);
 
             if (Physics.Raycast(position + Vector3.up * 10f, Vector3.down, out RaycastHit hit, 20f))
                 position.y = hit.point.y;
 
-            _playerInstance = Object.Instantiate(prefab, position, Quaternion.identity).GetComponent<PlayerController>();
+            _playerInstance = Object.Instantiate(prefab, position, Quaternion.identity).GetComponent<MovementController>();
 
             PlayerCameraController cameraController = new PlayerCameraController();
             cameraController.Initialize(_playerInstance);
-            _playerInstance.Initialize(cameraController.CameraTransform);
+            _playerInstance.Initialize(cameraController.CameraTransform, playerConfig.MovementConfig);
         }
 
         public void CleanUp()

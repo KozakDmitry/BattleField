@@ -118,6 +118,15 @@ public partial class @TouchControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Shift"",
+                    ""type"": ""Button"",
+                    ""id"": ""1950d265-0386-41d0-a18c-7bf38a3d741c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -197,6 +206,17 @@ public partial class @TouchControls: IInputActionCollection2, IDisposable
                     ""action"": ""MouseZoom"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""21dc6ec2-e1c5-42ad-ab0e-5bd72a34b6fa"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";PC"",
+                    ""action"": ""Shift"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -236,6 +256,7 @@ public partial class @TouchControls: IInputActionCollection2, IDisposable
         m_PC_Fire = m_PC.FindAction("Fire", throwIfNotFound: true);
         m_PC_Move = m_PC.FindAction("Move", throwIfNotFound: true);
         m_PC_MouseZoom = m_PC.FindAction("MouseZoom", throwIfNotFound: true);
+        m_PC_Shift = m_PC.FindAction("Shift", throwIfNotFound: true);
     }
 
     ~@TouchControls()
@@ -319,6 +340,7 @@ public partial class @TouchControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_PC_Fire;
     private readonly InputAction m_PC_Move;
     private readonly InputAction m_PC_MouseZoom;
+    private readonly InputAction m_PC_Shift;
     /// <summary>
     /// Provides access to input actions defined in input action map "PC".
     /// </summary>
@@ -342,6 +364,10 @@ public partial class @TouchControls: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "PC/MouseZoom".
         /// </summary>
         public InputAction @MouseZoom => m_Wrapper.m_PC_MouseZoom;
+        /// <summary>
+        /// Provides access to the underlying input action "PC/Shift".
+        /// </summary>
+        public InputAction @Shift => m_Wrapper.m_PC_Shift;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -377,6 +403,9 @@ public partial class @TouchControls: IInputActionCollection2, IDisposable
             @MouseZoom.started += instance.OnMouseZoom;
             @MouseZoom.performed += instance.OnMouseZoom;
             @MouseZoom.canceled += instance.OnMouseZoom;
+            @Shift.started += instance.OnShift;
+            @Shift.performed += instance.OnShift;
+            @Shift.canceled += instance.OnShift;
         }
 
         /// <summary>
@@ -397,6 +426,9 @@ public partial class @TouchControls: IInputActionCollection2, IDisposable
             @MouseZoom.started -= instance.OnMouseZoom;
             @MouseZoom.performed -= instance.OnMouseZoom;
             @MouseZoom.canceled -= instance.OnMouseZoom;
+            @Shift.started -= instance.OnShift;
+            @Shift.performed -= instance.OnShift;
+            @Shift.canceled -= instance.OnShift;
         }
 
         /// <summary>
@@ -484,5 +516,12 @@ public partial class @TouchControls: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMouseZoom(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Shift" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnShift(InputAction.CallbackContext context);
     }
 }

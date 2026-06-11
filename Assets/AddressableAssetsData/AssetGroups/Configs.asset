@@ -15,8 +15,8 @@ MonoBehaviour:
   m_GroupName: Configs
   m_GUID: 705e1f2a688f26541aced6d0f3a97427
   m_SerializeEntries:
-  - m_GUID: 7c953437769ddc0478805db41a192a67
-    m_Address: Cube1
+  - m_GUID: 563832bd7b599864e905b132499335f1
+    m_Address: PlayerConfig
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

@@ -5,7 +5,7 @@ namespace Assets.Project.Codebase.Logic.Gameplay.Player
 {
     public interface IPlayerSpawner
     {
-        PlayerController PlayerInstance { get; }
+        MovementController PlayerInstance { get; }
         UniTask Spawn(Vector3 position);
         void CleanUp();
     }
